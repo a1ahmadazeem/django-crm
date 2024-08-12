@@ -1,0 +1,30 @@
+{% extends 'webapp/base.html' %} 
+{% load crispy_forms_tags %} 
+{% block content%}
+
+<body>
+  <div class="container bg-light shadow-md p-5 form-layout" border-radius: 15px; width: 500px;"">
+    <h3>Login your account</h3>
+    <br />
+    <br />
+
+    <form  method="POST" autocomplete="off">
+      {% csrf_token %}
+     {{login_form|crispy}}
+      <br />
+      
+      <br />
+      <button type="submit" class="btn btn-primary w-100 btn-block p-2">
+        login
+      </button>
+    </form>
+    <div class="text-center">
+      <p>Create yor account</p>
+      <br />
+      <a href="{% url 'register' %}">register</a>
+    </div>
+  </div>
+  
+  <br />
+</body>
+{% endblock %}

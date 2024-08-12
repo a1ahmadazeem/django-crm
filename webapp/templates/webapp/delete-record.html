@@ -1,0 +1,47 @@
+{% comment %} {% extends 'webapp/base.html' %} 
+
+{% block content %}
+<body>
+    <div class="modal" >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Congratulations</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <p>Your record is now deleted </p>
+              <div class="card">
+                <strong>
+                    {{record.first_name|upper}}
+                    {{record.last_name|upper}}
+                </strong>
+                <hr>
+            
+            
+                <div class="card-body">
+                    <p><strong>ID: </strong> {{record.id}} </p>
+                    <p><strong>Email: </strong> {{record.email}} </p>
+                    <p><strong>Phone: </strong> {{record.phone}} </p>
+                    <p><strong>Address: </strong> {{record.address}} </p>
+                    <p><strong>City: </strong> {{record.city}} </p>
+                    <p><strong>Provience: </strong> {{record.province}} </p>
+                    <p><strong>Country: </strong> {{record.country}} </p>
+                
+                    <p><strong>Created: </strong> {{record.creation_date}} </p>
+            
+                </div>
+            </div>
+            </div>
+            <div class="modal-footer">
+                <a href="{% url "dashboard" %}"class="btn btn-secondary">Return to dastboard</a>
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+        
+</body>
+
+{% endblock content %} {% endcomment %}

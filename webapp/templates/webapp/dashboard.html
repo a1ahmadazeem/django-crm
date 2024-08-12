@@ -1,0 +1,67 @@
+{% extends "webapp/base.html" %}
+ {% block content %}
+
+<br>
+<br>
+ <h5>Welcome to Dashboard  {{user}}</h5>
+ <hr>
+
+ <a class="btn btn-outline-primary btn-sm" href="{% url 'create_record' %}">
+    create a new record
+   </a>
+   <hr>
+   <table class="table table-hover table table-bordered">
+    <thead class="table-light">
+      <tr>
+        <th scope="col">id</th>
+        <th scope="col">Date</th>
+        <th scope="col"> Name</th>
+        <th scope="col">E mail</th>
+        <th scope="col">Addeess</th>
+        <th scope="col">City</th>
+        <th scope="col">Provience</th>
+        <th scope="col">Country</th>
+        <th scope="col">View</th>
+      </tr>
+    </thead>
+    {% for record in records %} 
+     <tbody>
+      <tr>
+         <th scope="row"> {{record.id}}</th>
+         <td>{{record.creation_date}}</td>
+         <td>{{record.first_name}} {{record.last_name}}</td>
+         <td>{{record.email}}</td>
+         <td>{{record.address}}</td>
+         <td>{{record.city}}</td>
+         <td>{{record.province}}</td>
+         <td>{{record.country}}</td>
+         <td><a href="{% url 'record' record.id %}">click me </a></td>
+       
+         
+         
+         <td></td>
+        </tr>
+      </tbody>
+    {% endfor %}
+  </table>
+
+
+
+
+
+
+
+  
+          {{record.id}}
+         
+          {{record.last_name}} 
+
+
+
+
+   
+
+
+
+
+{% endblock  %}
